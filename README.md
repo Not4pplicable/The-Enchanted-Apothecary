@@ -1,52 +1,37 @@
-Devlog
-Day 0 – Brainstorming the Idea (Aug 7, 2025)
-Yesterday was all about the concept. I wanted to blend the action of a roguelike dungeon crawler with the calm management of running a shop. That’s where the mushroom tea shop idea came from.
+The Enchanted Apothecary
+A roguelike dungeon crawler with a day/night cycle:
 
-Core loop I envisioned:
+Night → Explore procedurally generated dungeons, fight enemies, and collect ingredients.
 
-Night: Explore procedurally generated forest dungeons full of mushroom/spore/fungus enemies.
+Day → Brew and sell tea for gold, upgrade your shop, and prepare for deeper dungeon runs.
 
-Day: Run a tea shop, brewing and selling teas from ingredients gathered at night.
+Devlog Timeline
+Day 1 – Project Setup & Brainstorming
+Finalized the core game concept: dungeon crawling at night, tea shop management during the day.
 
-Progression: Upgrade weapons, armor, and shop; unlock recipes; maybe hire helpers.
+Decided to use Godot 4 for development.
 
-Inspiration:
+Installed Godot and set up the project folder structure (Player/, Sprites/, Scripts/).
 
-Moonlighter for the dungeon/shop cycle
+Created initial GitHub repository and .gitignore for Godot projects.
 
-Enter the Gungeon for combat variety
+Implemented basic player movement script in a test scene.
 
-Old Pokémon/Zelda for the music style
+Day 2 – Animation & State Machine
+Created IdleState and MoveState scripts to manage player animations and movement logic using a state machine pattern.
 
-I also picked out pixel-art assets from CraftPix for the forest tiles and monsters, aiming for a colorful but adventurous feel. The long-term plan: sell first on PC (itch.io/Steam), console later if successful.
+Added directional animations:
 
-Day 1 – Project Setup & First Movement (Aug 8, 2025)
-Today was the first coding day. I decided to use Godot 4 for its strong 2D workflow, no royalties, and simple exports. We restarted fresh to avoid broken references and set up a clean, organized repo.
+Idle → up, down, left, right
 
-What we accomplished:
+Walking → up, down, left, right
 
-Created a clean Godot project and .gitignore for version control.
+Imported and configured sprite sheets in AnimatedSprite2D with proper frame separation.
 
-Set up folder structure:
+Fixed animation naming mismatches that caused playback issues.
 
-Copy
-Edit
-player/
-  player.tscn
-  scripts/Player.gd
-  sprites/
-Built the Player scene (CharacterBody2D + Sprite2D + CollisionShape2D).
+Converted to typed variables in scripts to remove Variant warnings.
 
-Wrote movement script using Input.get_vector() and move_and_slide() in _physics_process().
+Began learning state machine structure for cleaner future gameplay features.
 
-Added playground.tscn as the main scene and instanced the Player.
-
-Configured Input Map for WASD and arrow key movement.
-
-Linked the project to GitHub and committed the initial working version.
-
-Next steps:
-
-Add TileMap and pixel-perfect camera so the player can explore a test level.
-
-Start importing placeholder assets for the world.
+Troubleshot Git/GitHub sync issues and updated repository with latest changes.
