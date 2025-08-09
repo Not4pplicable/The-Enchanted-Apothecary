@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbfpfy7mvc3my"]
+
+[ext_resource type="Script" uid="uid://degjum364hjr" path="res://Player/Scripts/player.gd" id="1_4ntmi"]
+[ext_resource type="Texture2D" uid="uid://bpdpt8tjswq3g" path="res://Player/Sprites/Unarmed_Idle_full.png" id="2_btcbx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwnis"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_4ntmi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_gwnis")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(1, -1)
+texture = ExtResource("2_btcbx")
+hframes = 12
+vframes = 4
