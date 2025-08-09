@@ -1,7 +1,10 @@
 [gd_scene load_steps=72 format=3 uid="uid://cbfpfy7mvc3my"]
 
 [ext_resource type="Script" uid="uid://degjum364hjr" path="res://Player/Scripts/player.gd" id="1_4ntmi"]
-[ext_resource type="Texture2D" uid="uid://bpdpt8tjswq3g" path="res://Player/Sprites/Unarmed_Idle_full.png" id="2_btcbx"]
+[ext_resource type="Texture2D" uid="uid://oj0hgvdbhjfm" path="res://Player/Sprites/Swordsman_lvl2/Swordsman_lvl2_Idle_full.png" id="2_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://cwvxjkihtond2" path="res://Player/Sprites/Swordsman_lvl2/Swordsman_lvl2_Walk_full.png" id="3_hqtel"]
+[ext_resource type="Script" path="res://Player/Scripts/States/IdleState.gd" id="4_sweqy"]
+[ext_resource type="Script" path="res://Player/Scripts/States/MoveState.gd" id="5_2hs0m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gwnis"]
 
@@ -503,9 +506,15 @@ script = ExtResource("1_4ntmi")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_gwnis")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(1, -1)
-texture = ExtResource("2_btcbx")
-hframes = 12
-vframes = 4
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mgmjd")
+animation = &"walk_left"
+frame_progress = 0.82814
+
+[node name="States" type="Node" parent="."]
+
+[node name="Idle" type="Node" parent="States"]
+script = ExtResource("4_sweqy")
+
+[node name="Move" type="Node" parent="States"]
+script = ExtResource("5_2hs0m")
